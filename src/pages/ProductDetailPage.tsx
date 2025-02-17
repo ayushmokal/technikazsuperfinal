@@ -72,26 +72,24 @@ export default function ProductDetailPage() {
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
-      <div className="flex-1 overflow-hidden">
+      <div className="flex-1 relative">
         <div className="container mx-auto py-4 sm:py-8 px-4">
           <div className="flex flex-col lg:flex-row gap-8">
-            {/* Left Section - Fixed, Narrower and More Left */}
-            <div className="w-full lg:w-[25%] lg:flex-shrink-0">
-              <div className="lg:fixed lg:w-[20%] lg:-ml-4 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto">
-                <div className="space-y-4 lg:sticky lg:top-4 pb-16">
-                  <ProductGallery 
-                    mainImage={product.image_url} 
-                    productName={product.name}
-                    galleryImages={product.gallery_images}
-                    activeSection={activeSection}
-                    onSectionChange={setActiveSection}
-                  />
-                </div>
+            {/* Left Section - Fixed Gallery */}
+            <div className="w-full lg:w-[25%]">
+              <div className="lg:sticky lg:top-24 lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto">
+                <ProductGallery 
+                  mainImage={product.image_url} 
+                  productName={product.name}
+                  galleryImages={product.gallery_images}
+                  activeSection={activeSection}
+                  onSectionChange={setActiveSection}
+                />
               </div>
             </div>
             
-            {/* Right Section - Scrollable, Adjusted Width */}
-            <div className="w-full lg:w-[75%] lg:ml-auto overflow-auto">
+            {/* Right Section - Scrollable Content */}
+            <div className="w-full lg:w-[75%]" id="product-content">
               <ProductContent
                 product={product}
                 type={type}

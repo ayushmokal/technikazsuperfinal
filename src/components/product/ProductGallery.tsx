@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ProductGalleryTabs } from "./ProductGalleryTabs";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
 interface ProductGalleryProps {
   mainImage: string | null;
@@ -65,7 +65,7 @@ export function ProductGallery({
   };
 
   return (
-    <div className="space-y-4 lg:sticky lg:top-4">
+    <div className="space-y-4">
       {/* Product Name */}
       <h1 className="text-2xl font-bold text-left">{productName}</h1>
 

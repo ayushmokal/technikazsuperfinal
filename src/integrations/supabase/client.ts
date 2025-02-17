@@ -81,7 +81,7 @@ const customFetch = async (url: string, options: RequestInit = {}) => {
 
 // Create Supabase client with enhanced configuration
 export const supabase = createClient<Database>(
-  'https://technikaz.duckdns.org',
+  'https://gdscregnum.me',
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ewogICJyb2xlIjogImFub24iLAogICJpc3MiOiAic3VwYWJhc2UiLAogICJpYXQiOiAxNzM4OTUzMDAwLAogICJleHAiOiAxODk2NzE5NDAwCn0.JuaouKMNgs7SS7Z-9Y68shzOI5CEsdQXBfZJESPqXUY',
   {
     auth: {
@@ -140,6 +140,8 @@ supabase.handleError = (error: any) => {
 
   // Auth errors
   if (error.__isAuthError) {
+    // Clear session on auth error
+    supabase.auth.signOut();
     return {
       message: 'Your session has expired. Please log in again.',
       code: 'AUTH_ERROR',
