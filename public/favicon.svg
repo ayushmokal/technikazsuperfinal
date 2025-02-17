@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+  <style>
+    text { 
+      font-family: Arial, sans-serif;
+      font-size: 24px;
+      font-weight: bold;
+      fill: #00E0FF;
+    }
+  </style>
+  <rect width="32" height="32" fill="#1a1a1a"/>
+  <text x="8" y="24">T</text>
+</svg> 

@@ -1,0 +1,27 @@
+# robots.txt for Technikaz
+
+User-agent: *
+Allow: /
+Allow: /tech
+Allow: /games
+Allow: /entertainment
+Allow: /stocks
+Allow: /gadgets
+Allow: /about
+Allow: /privacy
+Allow: /terms
+Allow: /comparison
+Allow: /product-reviews
+Allow: /article/*
+Allow: /product/*
+
+# Disallow admin and internal pages
+Disallow: /admin
+Disallow: /admin/*
+Disallow: /maintenance
+
+# Crawl delay to prevent server overload
+Crawl-delay: 10
+
+# Sitemap location
+Sitemap: https://technikaz.com/sitemap.xml

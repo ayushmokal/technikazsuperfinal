@@ -1,0 +1,113 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://technikaz.com/#organization",
+      "name": "Technikaz",
+      "url": "https://technikaz.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://i.ibb.co/BCHWQmq/Black-bg-2-1-e1722342966946-300x55.png",
+        "width": 300,
+        "height": 55
+      },
+      "sameAs": [
+        "https://facebook.com/technikaz",
+        "https://twitter.com/technikaz",
+        "https://instagram.com/technikaz",
+        "https://linkedin.com/company/technikaz"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://technikaz.com/#website",
+      "url": "https://technikaz.com",
+      "name": "Technikaz",
+      "publisher": {
+        "@id": "https://technikaz.com/#organization"
+      },
+      "description": "Latest Tech News, Reviews & Gadget Comparisons",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://technikaz.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://technikaz.com/#webpage",
+      "url": "https://technikaz.com",
+      "name": "Technikaz - Latest Tech News, Reviews & Gadget Comparisons",
+      "isPartOf": {
+        "@id": "https://technikaz.com/#website"
+      },
+      "about": {
+        "@id": "https://technikaz.com/#organization"
+      },
+      "description": "Stay updated with the latest technology news, in-depth reviews, gaming updates, and expert gadget comparisons. Your trusted source for tech insights."
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://technikaz.com/#categories",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Tech News",
+          "url": "https://technikaz.com/tech"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Gaming",
+          "url": "https://technikaz.com/games"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Entertainment",
+          "url": "https://technikaz.com/entertainment"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Stocks",
+          "url": "https://technikaz.com/stocks"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Gadgets",
+          "url": "https://technikaz.com/gadgets"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://technikaz.com/#service",
+      "name": "Product Reviews and Comparisons",
+      "provider": {
+        "@id": "https://technikaz.com/#organization"
+      },
+      "serviceType": "Technology Reviews",
+      "areaServed": "India",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Review Categories",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "Mobile Phones",
+            "url": "https://technikaz.com/gadgets?subcategory=MOBILE"
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Laptops",
+            "url": "https://technikaz.com/gadgets?subcategory=LAPTOPS"
+          }
+        ]
+      }
+    }
+  ]
+}
