@@ -27,9 +27,22 @@ export function MaintenanceProvider({ children }: { children: React.ReactNode })
   const [retryCount, setRetryCount] = useState(0);
   const MAX_RETRIES = 3;
   const RETRY_DELAY = 1000; // 1 second
-
   const fetchMaintenanceState = async (retry = false) => {
     try {
+      // First check if the Supabase URL is valid/available
+      try {
+        // Simple ping to check if the domain is reachable
+        await fetch(import.meta.env.VITE_SUPABASE_URL, { 
+          method: 'HEAD',
+          mode: 'no-cors',
+          cache: 'no-store',
+          signal: AbortSignal.timeout(5000) // 5 second timeout
+        });
+      } catch (pingError) {
+        console.warn('Unable to reach Supabase URL:', pingError);
+        // Continue anyway as the supabase client has its own error handling
+      }
+      
       const { data, error } = await supabase
         .from('secrets')
         .select('value')

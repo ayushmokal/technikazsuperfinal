@@ -81,8 +81,8 @@ const customFetch = async (url: string, options: RequestInit = {}) => {
 
 // Create Supabase client with enhanced configuration
 export const supabase = createClient<Database>(
-  'https://gdscregnum.me',
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ewogICJyb2xlIjogImFub24iLAogICJpc3MiOiAic3VwYWJhc2UiLAogICJpYXQiOiAxNzM4OTUzMDAwLAogICJleHAiOiAxODk2NzE5NDAwCn0.JuaouKMNgs7SS7Z-9Y68shzOI5CEsdQXBfZJESPqXUY',
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_ANON_KEY,
   {
     auth: {
       autoRefreshToken: true,
